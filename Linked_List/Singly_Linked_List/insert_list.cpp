@@ -20,6 +20,35 @@ node* insert_at_head(node* head, node* new_node)
 }
 
 /*
+Function: insert_anywhere
+Args: head -> head pointer to list where element is to be inserted
+      new_node -> node to be inserted
+Desc: Inserts the given node at the given position
+Returns: head -> head pointer to new list
+*/
+node* insert_anywhere(node* head, node* new_node, int position)
+{
+    // create a temporary node to point to the head
+    node* temp = head;
+
+    // skip to the given position
+    for(int i = 0; i < position; ++i)
+    {
+        // check if there are any elements after this node
+        if(temp->next != NULL)
+            // move to the next list
+            temp = temp->next;
+    }
+    
+    // point the next node of new node to that of current node
+    new_node->next = temp->next;
+    // insert the new node
+    temp->next = new_node;
+    
+    return head;
+}
+
+/*
 Function: insert_at_end
 Args: head -> head pointer to list where element is to be inserted
       new_node -> node to be inserted at end
