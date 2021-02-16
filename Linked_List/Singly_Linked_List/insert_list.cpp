@@ -20,6 +20,33 @@ node* insert_at_head(node* head, node* new_node)
 }
 
 /*
+Function: insert_at_end
+Args: head -> head pointer to list where element is to be inserted
+      new_node -> node to be inserted at end
+Desc: Inserts the given node at the end of the list
+Returns: head -> head pointer to new list
+*/
+node* insert_at_end(node* head, node* new_node)
+{
+    // create a temporary node to point to head
+    node* temp = head;
+    
+    // repeat until we are at the end of the list
+    while(temp->next != NULL)
+    {
+        // make temp point to the next node
+        temp = temp->next;
+    }
+
+    // attach the new node to the last element
+    temp->next = new_node;
+    // new node points to nothing
+    new_node->next = NULL;
+
+    return head;
+}
+
+/*
 Function: insert_element
 Args: head -> head pointer of list where element is to be inserted
       element -> item to be inserted
