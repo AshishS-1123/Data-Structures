@@ -21,6 +21,26 @@ node* delete_last_node(node* head, node* second_last)
 }
 
 /*
+Function: delete_head_node
+Args: head -> head node of list from where to delete
+Desc: deletes the last node from the list
+Returns: head -> head node of the new list
+*/
+node* delete_head_node(node* head)
+{
+    // create a temporary node to point to head node
+    node* temp = head;
+    
+    // make the next node of current head node as the new head
+    head = temp->next;
+
+    // free space occupied by this head node
+    free(temp);
+    
+    return head;
+}
+
+/*
 Function: delete_element
 Args: head -> pointer to head node of list from which to delete
       position -> position where node is to be deleted
