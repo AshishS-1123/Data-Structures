@@ -41,6 +41,27 @@ node* delete_head_node(node* head)
 }
 
 /*
+Function: delete_any_node
+Args: head -> head node of list from where to delete
+      node_before -> node before the node to be deleted
+Desc: deletes the given node from the list
+Returns: head -> head node of the new list
+*/
+node* delete_any_node(node* head, node* node_before)
+{
+    //create a temporary node that points to the node to be deleted
+    node* temp = node_before->next;
+    
+    // point the next of node_before to the node after temp
+    node_before->next = temp->next;
+
+    // deallocate the memory of temp
+    free( temp );
+
+    return head;
+}
+
+/*
 Function: delete_element
 Args: head -> pointer to head node of list from which to delete
       position -> position where node is to be deleted
