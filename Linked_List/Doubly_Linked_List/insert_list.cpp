@@ -41,6 +41,28 @@ void insert_at_end(node* last, node* new_node)
 }
 
 /*
+Function: insert_anywhere
+Desc: inserts given node in the middle of the list
+Args: node_before -> node after which new node is to be inserted
+      new_node -> node to be inserted in list
+Returns: None
+*/
+void insert_anywhere(node* node_before, node* new_node)
+{
+    // make next pointer of new node point to node after
+    new_node->next = node_before->next;
+    // make prev pointer of node after point to new node
+    node_before->next->prev = new_node;
+    // make next pointer of node before point to new node
+    node_before->next = new_node;
+    // make prev pointer of new node point to node before
+    new_node->prev = node_before;
+
+    // make the current node before point to the new node
+    node_before->next = new_node;
+}
+
+/*
 Function: insert_element
 Desc: Inserts the given element at the given position in the list
 Args: head -> pointer to head of list where element is to be inserted
