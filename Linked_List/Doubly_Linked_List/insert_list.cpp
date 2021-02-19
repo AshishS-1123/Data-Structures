@@ -23,6 +23,24 @@ node* insert_at_head(node* head, node* new_node)
 }
 
 /*
+Function: insert_at_end
+Desc: inserts given node at the end of linked list
+Args: last -> last node of list where node is to be inserted
+      new_node -> node to be inserted in list
+Returns: None
+*/
+void insert_at_end(node* last, node* new_node)
+{
+    // make next pointer of last node point to new node
+    last->next = new_node;
+    // make prev pointer of new node point to last node
+    new_node->prev = last;
+
+    // make next of new node as null
+    new_node->next = NULL;
+}
+
+/*
 Function: insert_element
 Desc: Inserts the given element at the given position in the list
 Args: head -> pointer to head of list where element is to be inserted
