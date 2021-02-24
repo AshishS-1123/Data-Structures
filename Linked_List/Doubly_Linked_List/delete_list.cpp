@@ -44,6 +44,28 @@ void delete_at_end(node* last)
 }
 
 /*
+Function: delete_anywhere
+Desc: Deletes element from middle of list
+Args: node_to_delete -> node to be deleted
+Returns: None
+*/
+void delete_anywhere(node* node_to_delete)
+{
+    // pointer to node before the one to delete
+    node* node_before = node_to_delete->prev;
+    // pointer to node after the one to delete
+    node* node_after = node_to_delete->next;
+
+    // make next of node before point to node after
+    node_before->next = node_after;
+    // make prev of node after point to node before
+    node_after->prev = node_before;
+
+    // deallocate node to delete
+    free(node_to_delete);
+}
+
+/*
 Function: delete_element
 Desc: Deletes element at given position from the list
 Args: head -> head pointer to the list to be deleted
