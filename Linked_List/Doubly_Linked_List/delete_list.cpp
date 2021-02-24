@@ -26,6 +26,24 @@ node* delete_at_head(node* head)
 }
 
 /*
+Function: delete_at_end
+Desc: delete element at end of list
+Args: last -> pointer to last node of list
+Returns: None
+*/
+void delete_at_end(node* last)
+{
+    // create pointer to second last node
+    node* second_last = last->prev;
+
+    // point the next of second last node to null
+    second_last->next = NULL;
+
+    // deallocate last node
+    free(last);
+}
+
+/*
 Function: delete_element
 Desc: Deletes element at given position from the list
 Args: head -> head pointer to the list to be deleted
