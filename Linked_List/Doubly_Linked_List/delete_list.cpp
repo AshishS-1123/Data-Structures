@@ -3,6 +3,29 @@
 using namespace std;
 
 /*
+Function: delete_at_head
+Desc: delete the element at the head of list
+Args: head -> head node of list to delete
+Returns: head -> head pointer of new list
+*/
+node* delete_at_head(node* head)
+{
+    // create temporary node for traversal
+    node* temp = head;
+
+    // make prev of next node point to null
+    temp->next->prev = NULL;
+
+    // make next node as head node
+    head = temp->next;
+
+    // deallocate the head node
+    free(temp);
+
+    return head;
+}
+
+/*
 Function: delete_element
 Desc: Deletes element at given position from the list
 Args: head -> head pointer to the list to be deleted
