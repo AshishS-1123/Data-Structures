@@ -72,4 +72,30 @@ void print_list(node* start)
     cout << "\n" << line_below <<"\n\n";
 }
 
+/*
+Function: cleanup
+Desc: deallocates memory of all nodes in list
+Args: start -> pointer to any node in list
+Returns: None
+*/
+void cleanup(node* start)
+{
+    // pointer for traversal
+    node* end = start;
 
+    // loop through all the nodes
+    do
+    {
+        cout << "\tDelete " << end->data << "\n";
+        // temporarily hold location of end node
+        node* temp = end;
+        
+        // increment the end node
+        end = end->next;
+        
+        // deallocate the current node
+        free(temp);
+
+    }while(end != start);
+
+}
