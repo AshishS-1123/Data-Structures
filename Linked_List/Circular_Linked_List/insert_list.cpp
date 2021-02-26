@@ -22,4 +22,35 @@ node* traverse_list(node* start, int position)
     return node_at_position;
 }
 
+/*
+Function: insert_element
+Desc: inserts given element in the list
+Args: start -> node to list where element is to be inserted
+Returns: start -> node to new list
+*/
+node* insert_element(node* start, int element, int position)
+{
+    // create a new node to add
+    node* new_node = (node*) malloc(sizeof(node*));
+    // add the data to the node
+    new_node->data = element;
 
+    // check if there are any elements present in the list
+    if(start == NULL)
+    {
+        // point next of new node to itself
+        new_node->next = new_node;
+
+        return new_node;
+    }
+
+    // traverse the list until we reach the given position
+    node* temp = traverse_list(start, position);
+
+    // insert the node after the given node
+    new_node->next = temp->next;
+    temp->next = new_node;
+
+    // return new start
+    return start;
+}
