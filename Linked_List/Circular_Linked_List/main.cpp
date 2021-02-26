@@ -30,13 +30,6 @@ int main()
     cout << "Inserting at position larger than size of list\n";
     print_list(start);
 
-    /* TEST DELETE NODE AT START */
-    start = delete_element(start, 3);
-    cout << "After Deleting Element\n";
-    print_list(start);
-
-    cout << "Done Processing... Performing Cleanup\n";
-    cleanup(start);
-
+    
     return 0;
 }
