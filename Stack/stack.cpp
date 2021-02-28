@@ -89,5 +89,53 @@ class Stack
             return stack_data[top_pointer];
         }
 
+        /*
+        Function: insert
+        Desc: Inserts new element into the stack
+        Args: element -> element to be inserted
+        Returns: None
+        */
+        void insert(int element)
+        {
+            // increment the top pointer
+            ++top_pointer;
+
+            // check if we are still withing the capacity limit
+            if( overflow() )
+            {
+                cout << "\tCould Not Insert. Stack Overflow\n\n";
+                return;
+            }
+
+            // insert the new element at this new position
+            stack_data[top_pointer] = element;
+        }
+
+        /*
+        Function: pop
+        Desc: Removes and returns the topmost element of stack
+        Args: None
+        Returns top_element -> topmost element of stack
+        */
+        int pop()
+        {
+            // get the topmost element
+            int top_element = top();
+
+            // decrement the top pointer
+            --top_pointer;
+
+            // check if any more elements can be removed
+            if( underflow() )
+            {
+                cout << "\tNo More Elements Present. Stack Underflow\n\n";
+                return -1;
+            }
+
+            // return the top element
+            return top_element;
+        }
+
+
 
 };
