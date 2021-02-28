@@ -69,5 +69,25 @@ class Stack
             // otherwise, return not occured
             return false;
         }
+        
+        /*
+        Function: top
+        Desc: Returns the topmost element of stack
+        Args: None
+        Returns: top_element -> topmost element of stack
+        */
+        int top()
+        {
+            // check that some elements exist in the stack
+            if( underflow() )
+            {
+                cout << "\tStack Has No Elements. Stack Underflow\n\n";
+                return -1;
+            }
+
+            // return the top element
+            return stack_data[top_pointer];
+        }
+
 
 };
