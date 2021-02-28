@@ -136,6 +136,23 @@ class Stack
             return top_element;
         }
 
+        /*
+        Function: print_stack
+        Desc: Prints the data vector of stack
+        Args: None
+        Returns: None
+        */
+        void print_stack()
+        {
+            // check if there are any elements in the stack
+            if( underflow() )
+                return;
 
+            // print the data vector
+            cout << "\tStack :: ";
+            for(int i = 0; i <= top_pointer; ++i)
+                cout << stack_data[i] << "  ";
+            cout << " <--- TOP\n\n";
+        }
 
 };
