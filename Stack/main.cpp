@@ -35,6 +35,27 @@ int main()
     s.insert(40);
     cout << "After Inserting 40\n";
     s.print_stack();
+    
+    /* TEST ACCESS TOP ELEMENT OF STACK */
+    top_element = s.top();
+    cout << "Accessed Top Element :: Top Is " << top_element << "\n\n";
+    
+    /* TEST REMOVE FROM STACK */
+    top_element = s.pop();
+    cout << "After Removing Top Element " << top_element << "\n";
+    s.print_stack();
+
+    top_element = s.pop();
+    cout << "After Removing Top Element " << top_element << "\n";
+    s.print_stack();
+
+    top_element = s.pop();
+    cout << "After Removing Top Element " << top_element << "\n";
+    s.print_stack();
+
+    top_element = s.pop();
+    cout << "After Removing Top Element " << top_element << "\n";
+    s.print_stack();
 
     return 0;
 }
