@@ -56,6 +56,15 @@ int main()
     top_element = s.pop();
     cout << "After Removing Top Element " << top_element << "\n";
     s.print_stack();
+    
+    /* TEST REMOVE FROM EMPTY STACK */
+    cout << "After Removing From Empty Stack\n";
+    top_element = s.pop();
+
+    /* TEST INSERTION AFTER EMPTYING STACK */
+    cout << "Trying To Insert Into Stack, Post Underflow\n";
+    s.insert(0);
+    s.print_stack();
 
     return 0;
 }
