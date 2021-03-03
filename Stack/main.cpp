@@ -15,6 +15,26 @@ int main()
     if(top_element != -1)
         cout << "Topmost element in stack is " << top_element << "\n";
 
-    
+    /* TEST INSERT INTO STACK */
+    s.insert(0);
+    cout << "After Inserting 0\n";
+    s.print_stack();
+
+    s.insert(10);
+    cout << "After Inserting 10\n";
+    s.print_stack();
+
+    s.insert(20);
+    cout << "After Inserting 20\n";
+    s.print_stack();
+
+    s.insert(30);
+    cout << "After Inserting 30\n";
+    s.print_stack();
+
+    s.insert(40);
+    cout << "After Inserting 40\n";
+    s.print_stack();
+
     return 0;
 }
