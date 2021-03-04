@@ -74,6 +74,46 @@ void print_list_forward(node* start)
 }
 
 /*
+Function: print_list_backward
+Desc: prints the given circular linked list
+Args: start -> any pointer pointing to a node in the list
+Returns: None
+*/
+void print_list_backward(node* start)
+{
+    // node for traversing the list
+    node* end = start;
+
+    // if there is a single element in the list
+    if(start->prev == start)
+    {
+        cout << "\t" << start->data << "\n\n";
+        return;
+    }
+    
+    cout << "\t";
+    string line_below("        |");
+    // keep traversing the list until we reach the start node
+    do
+    {
+        // print the current node
+        cout << end->data;
+
+        if(end->prev != start)
+        {
+            line_below += preety_print(end->data);
+            cout << " <---> ";
+        }
+
+        // move end to next node
+        end = end->prev;
+    }while(end != start);
+
+    line_below[line_below.size()-1] = '|';
+    cout << "\n" << line_below <<"\n\n";
+}
+
+/*
 Function: cleanup
 Desc: deallocates memory of all nodes in list
 Args: start -> pointer to any node in list
