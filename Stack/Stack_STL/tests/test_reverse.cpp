@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stack>
 
-#include "reverse_stack_iterative.cpp"
-#include "reverse_stack_recursive.cpp"
+#include "../reverse_stack_iterative.cpp"
+#include "../reverse_stack_recursive.cpp"
 
 using namespace std;
 
