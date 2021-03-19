@@ -3,6 +3,34 @@
 using namespace std;
 
 /*
+Function: insert_forward
+Desc: insert element at position after given node
+Args: start -> reference node where to insert element
+      new_node -> node to be inserted
+      position -> position at which to insert node
+Returns: start -> start node to new list
+*/
+node* insert_forward(node* start, node* new_node, int position)
+{
+    // temporary node for traversal
+    node* temp = start;
+
+    // traverse to the given location
+    for(int i = 0; i < position-1; ++i)
+    {
+        temp = temp->next;
+    }
+
+    new_node->prev = temp;
+    new_node->next = temp->next;
+
+    temp->next->prev = new_node;
+    temp->next = new_node;
+
+    return start;
+}
+
+/*
 Function: insert_backward
 Desc: insert element at position before given node
 Args: start -> reference node where to insert element
