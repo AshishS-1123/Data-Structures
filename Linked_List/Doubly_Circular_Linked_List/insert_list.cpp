@@ -3,6 +3,24 @@
 using namespace std;
 
 /*
+Function: insert_head
+Desc: insert given node before head node of list
+Args: start -> start node of list
+      new_node -> node to be inserted
+Returns: start -> start node of new list
+*/
+node* insert_head(node* start, node* new_node)
+{
+    new_node->next = start;
+    new_node->prev = start->prev;
+
+    start->prev->next = new_node;
+    start->prev = new_node;
+
+    return new_node;
+}
+
+/*
 Function: insert_element
 Desc: insert element into a doubly circular linked list
 Args: start -> start node of list where element is to be inserted
