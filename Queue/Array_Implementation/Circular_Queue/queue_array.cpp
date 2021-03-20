@@ -18,3 +18,23 @@ typedef struct Queue
     int rear;
 } Queue;
 
+/*
+Funcion: create_queue
+Desc: creates and initialize queue object and return it
+Args: None
+Returns: None
+*/
+Queue create_queue()
+{
+    // create a queue object
+    Queue q; 
+
+    // initialize the front pointer
+    q.front = -1;
+    // initialize the rear element
+    q.rear = -1;
+
+    // return the queue object
+    return q;
+}
+
