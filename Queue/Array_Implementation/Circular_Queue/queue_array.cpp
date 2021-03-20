@@ -71,3 +71,17 @@ void print_queue(Queue q)
     cout << "(rear)\n\n";
 }
 
+/*
+Function: isOverflow
+Desc: check if overflow has occured in queue
+Args: q -> queue to be checked for overflow
+Returns: bool -> true if overflow, false otherwise
+*/
+bool isOverflow(Queue q)
+{
+    // check if there are any empty places in array
+    if(q.front == (q.rear+1)%CAPACITY)
+        return true;
+    return false;
+}
+
