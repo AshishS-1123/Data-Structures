@@ -76,3 +76,16 @@ bool isOverflow(Queue q)
     return false;
 }
 
+/*
+Function: isUnderflow
+Desc: check if underflow has occured in queue
+Args: q -> queue to be checked for underflow
+Returns: bool -> true if underflow, false otherwise
+*/
+bool isUnderflow(Queue q)
+{
+    // check if queue is empty
+    if(q.front == -1 && q.rear == -1)
+        return true;
+    return false;
+}
