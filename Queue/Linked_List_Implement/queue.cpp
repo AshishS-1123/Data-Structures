@@ -56,3 +56,16 @@ void print_queue(Queue q)
 
 }
 
+/*
+Function: isUnderflow
+Desc: checks if there is underflow in queue
+Args: q -> queue to check for underflow
+Returns: bool -> true is underflow, false otherwise
+*/
+bool isUnderflow(Queue q)
+{
+    // check if front and rear pointer are null
+    if(q.front == NULL && q.rear == NULL)
+        return true;
+    return false;
+}
