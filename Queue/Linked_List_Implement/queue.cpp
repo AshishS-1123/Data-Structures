@@ -33,3 +33,26 @@ Queue create_queue()
     return q;
 }
 
+/*
+Function: print_queue
+Desc: prints the elements of the queue
+Args: q -> queue object to be printed
+Returns: None
+*/
+void print_queue(Queue q)
+{
+    // create a temporary node for traversal
+    node* temp = q.front;
+
+    // check if the queue is empty
+    if(q.front == NULL && q.rear == NULL)
+    {
+        cout << "\tQueue is Empty... Underflow\n";
+        return;
+    }
+
+    // print the linked holding elements of queue
+    print_list(q.front);
+
+}
+
