@@ -29,3 +29,16 @@ int find_length_iterative(node* head)
     return length;
 }
 
+/*
+Function: find_length_recursive
+Desc: recursively finds length of linked list
+Args: head -> head pointer of list
+Returns: length -> length of list
+*/
+int find_length_recursive(node* head)
+{
+    if(head != nullptr)
+        return 1 + find_length_recursive(head->next);
+    else
+        return 0;
+}
