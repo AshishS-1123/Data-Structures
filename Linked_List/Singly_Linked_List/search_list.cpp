@@ -30,3 +30,27 @@ bool search_iterative(node* head, int element)
     return false;
 }
 
+/*
+Function: search_recursive
+Desc: recursively search element in list
+Args: head -> head pointer to list
+      element -> element to search
+Returns: bool -> true if element was found, false otherwise
+*/
+bool search_recursive(node* head, int element)
+{
+    // check if node exists
+    if(head != nullptr)
+    {
+        // check if this is element we are looking for
+        if(head->data == element)
+            return true;
+        else
+            // search with next element
+            return search_recursive(head->next, element);
+    }
+
+    // otherwise, return not found
+    return false;
+}
+
