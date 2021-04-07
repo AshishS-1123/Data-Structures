@@ -5,6 +5,9 @@
 #include "insert_list.cpp"
 #include "delete_list.cpp"
 #include "reverse_list.cpp"
+#include "length_list.cpp"
+#include "search_list.cpp"
+#include "nth_node.cpp"
 
 int main()
 {
@@ -28,6 +31,33 @@ int main()
     HEAD = insert_element(HEAD, 40, -1);
     cout << "After inserting element at end of list\n";
     print_list(HEAD);
+
+    /* FIND LENGTH OF LIST */
+    cout << "Length of list (iterative)::" << find_length_iterative(HEAD)
+         << "\nLength if list (recursive)::" << find_length_recursive(HEAD)
+         << "\n\n";
+
+    /* SEARCH ELEMENT IN LIST ITERATIVELY */
+    if(search_iterative(HEAD, 20) == true)
+        cout << "Iterative search: Found 20\n";
+    else
+        cout << "Iterative search: Not found 20\n";
+    
+    if(search_iterative(HEAD, 25) == true)
+        cout << "Iterative search: Found 25\n";
+    else
+        cout << "Iterative search: Not found 25\n\n";
+    
+    /* SEARCH ELEMENT IN LIST RECURSIVELY */
+    if(search_recursive(HEAD, 20) == true)
+        cout << "Recursive search: Found 20\n";
+    else
+        cout << "Recursive search: Not found 20\n";
+    
+    if(search_recursive(HEAD, 25) == true)
+        cout << "Recursive search: Found 25\n\n";
+    else
+        cout << "Recursive search: Not found 25\n\n";
 
     /* DELETE HEAD NODE FROM LIST */
     HEAD = delete_element(HEAD, 0);
@@ -54,6 +84,11 @@ int main()
     HEAD = reverse_list(HEAD);
     cout << "After reversing list\n";
     print_list(HEAD);
+
+    /* GET ELEMENT AT INDEX 3 */
+    cout << "Element at index 3 in list is :: ";
+    cout << get_element_at_index(HEAD, 3);
+    cout << "\n\n";
 
     /* CLEANUP LIST FROM MEMORY */
     cout << "Program End... Performing cleanup\n";
