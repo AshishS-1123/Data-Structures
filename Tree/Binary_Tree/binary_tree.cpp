@@ -79,6 +79,26 @@ class binaryTree
             return data[idx];
         }
 
+        /*
+        Function: print_tree
+        Desc: prints all vectors that represent the tree
+        Args: None
+        Returns: None
+        */
+        void print_tree()
+        {
+            cout << "\n\tData :: ";
+            for(auto a : data) cout << a << " ";
+
+            cout << "\n\tLeft ::";
+            for(auto a : leftChild) cout << a << " ";
+
+            cout << "\n\tRight::";
+            for(auto a : rightChild) cout << a << " ";
+
+            cout << "\n";
+        }
+        
 
 };
 
