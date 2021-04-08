@@ -69,3 +69,23 @@ void preorder_util(binaryTree tree, int idx)
     preorder_util(tree, tree.right_child(idx));
 }
 
+/*
+Function: traverse_preorder
+Desc: performs preorder traversal of tree
+Args: tree -> binaryTree object to traverse
+Returns: None
+*/
+void traverse_preorder(binaryTree tree)
+{
+    // check if tree is empty
+    if(tree.empty())
+    {
+        cout << "\n";
+        return;
+    }
+
+    // traverse the tree
+    preorder_util(tree, 0);
+    cout << "\n";
+}
+
