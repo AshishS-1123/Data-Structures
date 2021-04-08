@@ -25,3 +25,24 @@ void inorder_util(binaryTree tree, int idx)
     inorder_util(tree, tree.right_child(idx));
 }
 
+/*
+Function: traverse_inorder
+Desc: performs inorder traversal of tree
+Args: tree -> binaryTree object to traverse
+Returns: None
+*/
+void traverse_inorder(binaryTree tree)
+{
+    // check if tree is empty
+    if(tree.empty())
+    {
+        cout << "\n";
+        return;
+    }
+
+    // traverse the tree
+    inorder_util(tree, 0);
+    cout << "\n";
+
+}
+
