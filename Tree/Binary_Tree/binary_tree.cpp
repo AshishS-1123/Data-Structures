@@ -99,6 +99,87 @@ class binaryTree
             cout << "\n";
         }
         
+        /*
+        Function: insert_element
+        Desc: insert element in tree
+        Args: element -> element to insert
+        Returns: None
+        */
+        void insert_element(int element)
+        {
+            // check if tree is empty
+            if(data.size() == 0)
+            {
+                // insert element in data array
+                data.push_back(element);
+
+                // mark left child index for this element as -1
+                leftChild.push_back(-1);
+                // mark right child index for this element as -1
+                rightChild.push_back(-1);
+
+                return;
+            }
+
+            // create a queue for traversal
+            queue<int> q;
+            // add first element of tree to queue
+            q.push(0);
+            
+            // repeat until all element processed
+            while(!q.empty())
+            {
+                // pop element from queue
+                int top_idx = q.front();
+                q.pop();
+
+                // check if left child for this node is present
+                if(leftChild[top_idx] != -1)
+                    // add this node to queue
+                    q.push(leftChild[top_idx]);
+                // otherwise
+                else
+                {
+                    // add the new element to data vector
+                    data.push_back(element);
+
+                    // set the left child of new node to -1
+                    leftChild.push_back(-1);
+                    // set the right child of new node to -1
+                    rightChild.push_back(-1);
+
+                    // mark this as left child of current node
+                    leftChild[top_idx] = data.size() - 1;
+
+                    // exit the code
+                    return;
+
+                }
+
+                // check if right child for this is present
+                if(rightChild[top_idx] != -1)
+                    // add this node to queue
+                    q.push(rightChild[top_idx]);
+                // otherwise
+                else
+                {
+                    // add the new element to the data vector
+                    data.push_back(element);
+
+                    // set the left child of new node to -1
+                    leftChild.push_back(-1);
+                    // set the right child of new node to -1
+                    rightChild.push_back(-1);
+
+                    // mark this as right child of current node
+                    rightChild[top_idx] = data.size() - 1;
+
+                    // exit the code
+                    return;
+                }
+            }
+
+        }
 
 };
 
