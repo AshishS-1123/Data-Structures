@@ -7,9 +7,10 @@ using namespace std;
 
 int main()
 {
+    // create a tree object
+    binaryTree tree = binaryTree();
 
-
-    return 0;
+        return 0;
 }
 
 
