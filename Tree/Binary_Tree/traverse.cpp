@@ -89,3 +89,26 @@ void traverse_preorder(binaryTree tree)
     cout << "\n";
 }
 
+/*
+Function: postorder_util
+Desc: utility function for traversing postorder
+Args: tree -> tree object to traverse
+      idx -> index of node from where to traverse
+Returns: None
+*/
+void postorder_util(binaryTree tree, int idx)
+{
+    // if this node does not exist
+    if(idx == -1)
+        return;
+
+    // traverse the left child
+    inorder_util(tree, tree.left_child(idx));
+
+    // traverse the right child
+    inorder_util(tree, tree.right_child(idx));
+
+    // print the current node
+    cout << tree.get_data(idx) << " ";
+}
+
