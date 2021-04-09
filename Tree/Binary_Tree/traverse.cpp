@@ -112,3 +112,23 @@ void postorder_util(binaryTree tree, int idx)
     cout << tree.get_data(idx) << " ";
 }
 
+/*
+Function: traverse_postorder
+Desc: performs postorder traversal of tree
+Args: tree -> binaryTree object to traverse
+Returns: None
+*/
+void traverse_postorder(binaryTree tree)
+{
+    // check if tree is empty
+    if(tree.empty())
+    {
+        cout << "\n";
+        return;
+    }
+
+    // traverse the tree
+    postorder_util(tree, 0);
+    cout << "\n";
+}
+
