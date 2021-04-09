@@ -132,3 +132,45 @@ void traverse_postorder(binaryTree tree)
     cout << "\n";
 }
 
+/*
+Function: traverse_level
+Desc: prints level order traversal of tree
+Args: tree -> tree to be traversed
+Returns: None
+*/
+void traverse_level(binaryTree tree)
+{
+    // check if tree is empty
+    if(tree.empty())
+    {
+        cout << "\n";
+        return;
+    }
+
+    // create queue for traversal
+    queue<int> q;
+
+    // insert first element to queue
+    q.push(0);
+
+    // repeat until all element processed
+    while(!q.empty())
+    {
+        // pop element from queue
+        int idx = q.front();
+        q.pop();
+
+        // print this element
+        cout << tree.get_data(idx) << " ";
+
+        // if this node has left child
+        if(tree.left_child(idx) != -1)
+            // add it to the queue
+            q.push(tree.left_child(idx));
+            
+        // if this node has right child
+        if(tree.right_child(idx) != -1)
+            // add it to the queue
+            q.push(tree.right_child(idx));
+    }
+}
