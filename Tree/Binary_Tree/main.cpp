@@ -44,6 +44,9 @@ int main()
     cout << "\nPreorder traversal of tree::\n\t";
     traverse_preorder(tree);
 
+    // print postrder traversal of tree
+    cout << "\nPostorder traversal of tree::\n\t";
+    traverse_postorder(tree);
     return 0;
 }
 
