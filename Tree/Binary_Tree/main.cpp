@@ -36,7 +36,10 @@ int main()
     tree.insert_element(60);
     tree.print_tree();
 
-    
+    // print inorder traversal of tree
+    cout << "\nInorder traversal of tree::\n\t";
+    traverse_inorder(tree);
+
     return 0;
 }
 
