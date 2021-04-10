@@ -47,6 +47,13 @@ int main()
     // print postrder traversal of tree
     cout << "\nPostorder traversal of tree::\n\t";
     traverse_postorder(tree);
+
+    // print level order traversal
+    cout << "\nLevel Order traversal of tree::\n\t";
+    traverse_level(tree);
+
+    cout << "\n";
+
     return 0;
 }
 
