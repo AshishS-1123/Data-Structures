@@ -40,6 +40,10 @@ int main()
     cout << "\nInorder traversal of tree::\n\t";
     traverse_inorder(tree);
 
+    // print preorder traversal of tree
+    cout << "\nPreorder traversal of tree::\n\t";
+    traverse_preorder(tree);
+
     return 0;
 }
 
